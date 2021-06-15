@@ -2,16 +2,17 @@
 <html>
 <head>
   {% include 'header.html' %}
+  <script>
+    function onlogin(identity) {
+      console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+      console.log(identity);
+    }
+    function onLogout() {
+      console.log('BBBBBBBBBBBBBBBBBBBBBBBBBB');
+      SFIDWidget.init();
+    }
+  </script>
 </head>
-<script>
-  function onlogin() {
-		console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-	}
-  function onLogout() {
-    console.log('BBBBBBBBBBBBBBBBBBBBBBBBBB');
-		SFIDWidget.init();
-  }
-</script>
 <body>
   <div>
     <div style="margin: 5% 0 0 40%; width: 300px" id="salesforce-login"></div>
