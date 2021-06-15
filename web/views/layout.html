@@ -3,10 +3,16 @@
 <head>
   {% include 'header.html' %}
 </head>
-
+<script>
+  function onlogin() {
+		console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+	}
+  function onLogout() {
+    console.log('BBBBBBBBBBBBBBBBBBBBBBBBBB');
+		SFIDWidget.init();
+  }
+</script>
 <body>
-  {% include 'nav.html' %}
-
-  {% block content %}{% endblock %}
+  
 </body>
 </html>
