@@ -2,6 +2,14 @@
 <html>
 <head>
   {% include 'header.html' %}
+  <script type="text/css">
+    .hide {
+      display: none;
+    }
+    .show {
+      display: inline-block;
+    }
+  </script>
   <script>
     function onlogin(identity) {
       console.log('LOGIN SUCCESS');
@@ -29,21 +37,31 @@
     
       targetDiv.innerHTML = '';
       targetDiv.appendChild(iddiv);	
+      let logout = document.getElementById('salesforce-logout');
+      logout.className = 'show';
+
     }
     function onlogout() {
       console.log('onlogout');
+      let logout = document.getElementById('salesforce-logout');
+      logout.className = 'hide';
       SFIDWidget.init();
+    }
+    function logout() {
+      SFIDWidget.logout();
     }
   </script>
 </head>
 <body>
   <div>
-    <div style="top: 0px; float:right" id="salesforce-logout">
-      <a href="https://devsb-ditest001b2bcommercelex.cs73.force.com/b2bCommLEX03/secur/logout.jsp" class="logout">Logout</a>
+    <div>
+      <div style="top: 0px; float:right" id="salesforce-logout">
+        <a href="#" class="logout" onclick="logout()">Logout</a>
+      </div>
     </div>
-  </div>
-  <div>
-    <div style="margin: 5% 0 0 40%; width: 300px" id="salesforce-login"></div>
+    <div>
+      <div style="margin: 5% 0 0 40%; width: 300px" id="salesforce-login"></div>
+    </div>
   </div>
 </body>
 </html>
