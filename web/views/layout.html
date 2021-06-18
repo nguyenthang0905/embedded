@@ -2,14 +2,14 @@
 <html>
 <head>
   {% include 'header.html' %}
-  <script type="text/css">
+  <style>
     .hide {
       display: none;
     }
     .show {
       display: inline-block;
     }
-  </script>
+  </style>
   <script>
     function onlogin(identity) {
       console.log('LOGIN SUCCESS');
@@ -55,7 +55,7 @@
 <body>
   <div>
     <div>
-      <div style="top: 0px; float:right" id="salesforce-logout">
+      <div style="top: 0px; float:right" id="salesforce-logout" class="hide">
         <a href="#" class="logout" onclick="logout()">Logout</a>
       </div>
     </div>
